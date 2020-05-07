@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadFramework.Abstractions.Telemetry", "RadFramework.Abstractions.Telemetry\RadFramework.Abstractions.Telemetry.csproj", "{5B6AECB6-DA54-4A48-B27E-5440AC37B318}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadFramework.Libraries.Telemetry", "RadFramework.Libraries.Telemetry\RadFramework.Libraries.Telemetry.csproj", "{7A9C44F2-1345-4334-80B7-35B0ADB01921}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadFramework.Libraries.Telemetry.Tests", "RadFramework.Libraries.Telemetry.Tests\RadFramework.Libraries.Telemetry.Tests.csproj", "{1BF77BA2-B7A9-42DA-B985-3FF5AFBBC550}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B6AECB6-DA54-4A48-B27E-5440AC37B318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B6AECB6-DA54-4A48-B27E-5440AC37B318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B6AECB6-DA54-4A48-B27E-5440AC37B318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B6AECB6-DA54-4A48-B27E-5440AC37B318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A9C44F2-1345-4334-80B7-35B0ADB01921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A9C44F2-1345-4334-80B7-35B0ADB01921}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A9C44F2-1345-4334-80B7-35B0ADB01921}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A9C44F2-1345-4334-80B7-35B0ADB01921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BF77BA2-B7A9-42DA-B985-3FF5AFBBC550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BF77BA2-B7A9-42DA-B985-3FF5AFBBC550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BF77BA2-B7A9-42DA-B985-3FF5AFBBC550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BF77BA2-B7A9-42DA-B985-3FF5AFBBC550}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
