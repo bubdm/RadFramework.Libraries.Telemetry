@@ -13,7 +13,7 @@ namespace Tests
             {
                 len = ushort.MaxValue;
             }
-
+            
             byte[] packageWithHeader = new byte[] 
                     { (byte)(len / 256), (byte)(len & 255) }
                 .Concat(package)
