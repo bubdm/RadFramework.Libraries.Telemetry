@@ -10,9 +10,7 @@ namespace RadFramework.Libraries.Telemetry.v2
         
         public TelemetryStream(EndPoint endPoint)
         {
-            Socket socket = new Socket(SocketType.Stream, ProtocolType.Tcp);
-            socket.Connect(endPoint);
-            Stream = new NetworkStream(socket);
+            
         }
 
         public TelemetryStream(Socket socket)

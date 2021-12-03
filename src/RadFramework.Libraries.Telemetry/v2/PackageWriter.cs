@@ -6,7 +6,7 @@ namespace RadFramework.Libraries.Telemetry.v2
 {
     public class PackageWriter<THeader> where THeader : HeaderBase
     {
-        private Type _headerType = typeof(THeader);
+        private readonly Type _headerType = typeof(THeader);
         private readonly IContractSerializer _headerSerializer;
         private readonly IContractSerializer _packageSerializer;
 
@@ -29,7 +29,7 @@ namespace RadFramework.Libraries.Telemetry.v2
 
             byte[] serializedHeaderSize = new byte[sizeof(int)];
 
-            WriteInt32(ref serializedHeaderSize, 0, serializedHeader.Length);
+            WriteInt32(ref serializedHeaderSize, serializedHeader.Length);
 
             stream.Write(serializedHeaderSize);
             stream.Write(serializedHeader);
@@ -37,13 +37,13 @@ namespace RadFramework.Libraries.Telemetry.v2
             stream.Flush();
         }
 
-        public object ReadPackage(Stream stream, object package)
+        public SerializedPackage ReadPackage(Stream stream)
         {
             byte[] headerSizeBuffer = new byte[sizeof(int)];
             
             stream.Read(headerSizeBuffer, 0, sizeof(int));
             
-            int headerSize = ReadInt32(ref headerSizeBuffer, 0);
+            int headerSize = ReadInt32(ref headerSizeBuffer);
 
             byte[] serializedHeader = new byte[headerSize];
 
@@ -54,20 +54,26 @@ namespace RadFramework.Libraries.Telemetry.v2
             byte[] serializedPackage = new byte[header.PayloadSize];
 
             stream.Read(serializedPackage, 0, header.PayloadSize);
-            
-            return _packageSerializer.Deserialize(Type.GetType(header.PayloadType), serializedPackage);
+
+            SerializedPackage package = new SerializedPackage
+            {
+                Header = header,
+                Package = serializedPackage
+            };
+
+            return package;
         }
         
-        public static unsafe int ReadInt32(ref byte[] bytes, int offset)
+        private static unsafe int ReadInt32(ref byte[] bytes)
         {
             fixed (byte* numPtr = bytes)
-                return *(int*) (numPtr + offset);
+                return *(int*) (numPtr);
         }
         
-        public static unsafe void WriteInt32(ref byte[] bytes, int offset, int value)
+        private static unsafe void WriteInt32(ref byte[] bytes, int value)
         {
             fixed (byte* numPtr = bytes)
-                *(int*) (numPtr + offset) = value;
+                *(int*) (numPtr) = value;
         }
     }
 }

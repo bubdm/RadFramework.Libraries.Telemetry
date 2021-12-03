@@ -22,4 +22,8 @@
       <ProjectReference Include="..\RadFramework.Abstractions.Telemetry\RadFramework.Abstractions.Telemetry.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="v2\Handlers" />
+    </ItemGroup>
+
 </Project>
