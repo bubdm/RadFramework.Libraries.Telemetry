@@ -1,3 +1,4 @@
+using System;
 using MessagePack;
 
 namespace RadFramework.Libraries.Telemetry.v2
@@ -6,9 +7,9 @@ namespace RadFramework.Libraries.Telemetry.v2
     public class HeaderBase
     {
         [Key(0)]
-        public int PayloadSize { get; set; }
+        public int PayloadSize { get; internal set; }
         
         [Key(1)]
-        public string PayloadType { get; set; }
+        public Type PayloadType { get; internal set; }
     }
 }

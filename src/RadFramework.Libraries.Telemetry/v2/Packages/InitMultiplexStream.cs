@@ -2,8 +2,8 @@ using System;
 
 namespace RadFramework.Libraries.Telemetry.v2.Packages
 {
-    public class InitMultiplexConnection
+    public class InitMultiplexStream
     {
-        public int CpuCores { get; set; }
+        public Guid ClientId { get; set; }
     }
 }
